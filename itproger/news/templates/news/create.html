@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    Форма для заповнення
+{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Форма для заповнення</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.title }}<br>
+            {{ form.anons }}<br>
+            {{ form.full_text }}<br>
+            {{ form.date }}<br>
+            <span class="error">{{ error }}</span>
+
+            <button class="btn btn-info" type="submit"> Опублікувати статтю</button>
+        </form>
+
+    </div>
+{% endblock %}
